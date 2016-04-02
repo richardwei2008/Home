@@ -11,9 +11,15 @@ $(function(){
     y: 50 * canvas.height / 100
   };
 
+  var numberOfDots = 250;
+  var distance = 100;
+  if (canvas.width < 500) {
+    numberOfDots = 80;
+    distance = 50;
+  }
   var dots = {
-    nb: 250,
-    distance: 100,
+    nb: numberOfDots,
+    distance: 50,
     d_radius: 150,
     array: []
   };

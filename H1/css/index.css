@@ -28,7 +28,7 @@ html,body {
 
 #smohan-v4-container section:nth-of-type(4) {
 	background: url(../img/index_contact.jpg) 50% no-repeat scroll;
-	background-size: cover
+	background-size: contain
 }
 
 #smohan-v4-container section .grid-auto-wrapper {
@@ -226,23 +226,24 @@ h1 {
 }
 
 .page1 h1,.page1 h3 {
-	text-indent: -9999em;
+	/*text-indent: -9999em;*/
 	text-align: center
 }
 
 .page1 h1 {
 	width: 680px;
 	height: 60px;
-	background: url(../img/index_p1_h1.png) 50% no-repeat;
-	background-size: 100% auto;
+	/*background: url(../img/index_p1_h1.png) 50% no-repeat;*/
+	/*background-size: 100% auto;*/
 	margin: 0 auto 0 auto
 }
 
 .page1 h3 {
 	width: 320px;
 	height: 40px;
-	background: url(../img/index_p1_p.png) 50% no-repeat;
-	background-size: 100% auto;
+	color: #898989
+	/*background: url(../img/index_p1_p.png) 50% no-repeat;*/
+	/*background-size: 100% auto;*/
 	margin: 20px auto 0 auto
 }
 
@@ -252,26 +253,35 @@ h1 {
 	background: url(../img/device-main.png) 50% no-repeat;
 	background-size: 100% auto;
 	margin: 40px auto 0 auto;
+	box-sizing: border-box;
 	position: relative
 }
 
 .page1 .m-driver .inner {
-	position: absolute;
+	/*position: absolute;*/
+	position: relative;
+	box-sizing: border-box;
 	z-index: 5;
-	width: 547px;
-	height: 336px;
-	top: 33px;
-	left: 96px;
+	/*width: 547px;*/
+	/*height: 336px;*/
+	width: 76%;
+	height: 82%;
+	/*top: 33px;*/
+	/*left: 96px;*/
+	margin: 3% 12%;
+	margin-bottom: 12%;
     background-color: hsla(90, 3%, 13%, 0.45);
 }
 
 .page1 .inner .logo {
-	width: 146px;
-	height: 146px;
-	background: url(../img/logo_flat.png) no-repeat;
+	/*width: 146px;*/
+	/*height: 146px;*/
+	width: 10rem;
+	height: 10rem;
+	background: url(../img/logo-flat.png) no-repeat;
 	background-size: cover;
 	display: block;
-	margin: 36px auto
+	margin: 3rem auto
 }
 
 .page1 .inner .button,.page2 .button {
@@ -1492,6 +1502,7 @@ h1 {
 
 .page5 .m-link-wrap {
 	position: absolute;
+	text-align: center;
 	top: 0;
 	bottom: 0;
 	width: 100%
@@ -1499,7 +1510,7 @@ h1 {
 
 .page5 .m-link-wrap:before,.page5 .m-link-wrap .inner {
 	display: inline-block;
-	vertical-align: middle
+	vertical-align: middle;
 }
 
 .page5 .m-link-wrap:before {
@@ -1508,6 +1519,8 @@ h1 {
 }
 
 .page5 .m-link-wrap .inner {
+	position: relative;
+	margin: 0 auto;
 	text-align: center;
 	/*width: 100%;*/
 	-webkit-transform: translateY(-180%);
@@ -1860,7 +1873,7 @@ h1 {
 }
 
 .page-init .inner {
-	/*width: 100%*/
+	width: 100%
 }
 
 .page3 .m-works-wrap {
@@ -2129,7 +2142,7 @@ h1 {
 	}
 }
 
-@media screen and (max-width:1366px) {
+@media screen and (min-width: 1121px) and (max-width:1366px) {
 	.grid-auto-wrapper {
 		width: 82%!important
 	}
@@ -2152,23 +2165,23 @@ h1 {
 		height: 35px
 	}
 
-	.page1 .m-driver {
-		width: 600px;
-		height: 353px;
-		margin-top: 20px
-	}
+	/*.page1 .m-driver {*/
+		/*width: 600px;*/
+		/*height: 353px;*/
+		/*margin-top: 20px*/
+	/*}*/
 
-	.page1 .m-driver .inner {
-		width: 444px;
-		height: 270px;
-		top: 28px;
-		left: 77px
-	}
+	/*.page1 .m-driver .inner {*/
+		/*width: 444px;*/
+		/*height: 270px;*/
+		/*top: 28px;*/
+		/*left: 77px*/
+	/*}*/
 
-	.page1 .m-driver .inner .logo {
-		width: 120px;
-		height: 120px
-	}
+	/*.page1 .m-driver .inner .logo {*/
+		/*width: 120px;*/
+		/*height: 120px*/
+	/*}*/
 
 	.page1 .inner .button,.page2 .button {
 		width: 226px;
@@ -2197,7 +2210,7 @@ h1 {
 	}
 }
 
-@media screen and (max-width:1120px) {
+@media screen and (min-width: 961px) and (max-width:1120px) {
 	.page2 .article-wrap,.page4 .m-contact,.page3 .m-text {
 		display: none
 	}
@@ -2217,15 +2230,135 @@ h1 {
 	}
 }
 
-@media screen and (max-width:960px) {
+@media screen and (min-width: 641px) and (max-width:960px) {
 	#navgation:before {
 		width: 80%
 	}
 }
 
-@media screen and (max-width:480px) {
+@media screen and (min-width: 481px) and (max-width:640px) {
+	#navgation:before {
+		width: 80%
+	}
+	.page1 .m-driver {
+		width: 300px;
+		height: 180px;
+		margin-top: 10px
+	}
+
+	.page1 .m-driver .inner {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		/*width: 222px;*/
+		/*height: 135px;*/
+		/*top: 28px;*/
+		/*left: 77px*/
+	}
+}
+
+
+@media screen and (min-width: 321px) and (max-width:480px) {
 	#navgation:before {
 		width: 100%
+	}
+
+	.page1 h1 {
+		width: 100%;
+		height: 40px;
+		font-size: 24px;
+		margin: 0 auto 0 auto
+	}
+	.page1 .m-driver {
+		width: 300px;
+		height: 184px;
+		margin-top: 10px
+	}
+	.page1 .m-driver .inner {
+		position: relative;
+		z-index: 5;
+		width: 76%;
+		height: 82%;
+		margin: 3% 12%;
+		margin-bottom: 12%;
+		background-color: hsla(90, 3%, 13%, 0.45);
+	}
+	.page1 .inner .logo {
+		width: 5rem;
+		height: 5rem;
+		background: url(../img/logo-flat.png) no-repeat;
+		background-size: cover;
+		display: block;
+		margin: 1rem auto
+	}
+	.page1 .inner .button,.page2 .button {
+		width: 50%;
+		height: 30px;
+		border: 2px solid rgba(255,255,255,.8);
+		border-radius: 50px;
+		display: block;
+		margin: 0 auto;
+		line-height: 30px;
+		text-align: center;
+		color: rgba(255,255,255,.8);
+		font-size: 12px;
+		text-decoration: none;
+		overflow: hidden;
+		position: relative;
+		-webkit-transition: all .6s linear;
+		transition: all .6s linear
+	}
+}
+
+@media screen and (max-width:320px) {
+	#navgation:before {
+		width: 80%
+	}
+	.page1 h1 {
+	 	width: 100%;
+		height: 40px;
+		font-size: 20px;
+		margin: 0 auto 0 auto
+	}
+	.page1 .m-driver {
+		width: 240px;
+		height: 144px;
+		margin-top: 10px
+	}
+	.page1 .m-driver .inner {
+		position: relative;
+		z-index: 5;
+		width: 76%;
+		height: 82%;
+		margin: 3% 12%;
+		margin-bottom: 12%;
+		background-color: hsla(90, 3%, 13%, 0.45);
+	}
+	.page1 .inner .logo {
+		width: 4rem;
+		height: 4rem;
+		background: url(../img/logo-flat.png) no-repeat;
+		background-size: cover;
+		display: block;
+		margin: 0.5rem auto
+	}
+	.page1 .inner .button,.page2 .button {
+		width: 50%;
+		height: 24px;
+		border: 2px solid rgba(255,255,255,.8);
+		border-radius: 50px;
+		display: block;
+		margin: 0 auto;
+		line-height: 24px;
+		text-align: center;
+		color: rgba(255,255,255,.8);
+		font-size: 10px;
+		text-decoration: none;
+		overflow: hidden;
+		position: relative;
+		-webkit-transition: all .6s linear;
+		transition: all .6s linear
 	}
 }
 
