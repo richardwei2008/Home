@@ -66,15 +66,17 @@
     <![endif]-->
 </head>
 <body>
-<img src="img/data-scientist.jpg" alt="data-scientist" style="display: none">
+<div style="display: none">
+    <img src="img/data-scientist.jpg" alt="data-scientist">
+</div>
 <div id="v4-pre-loaded">
     <div class="loading"></div>
 </div>
 <img src="img/logo-search.jpg" alt="richaaaard" style="visibility:hidden;position: absolute;top: 0;left: 0;">
 <a class="music-wrap" id="smohan-v4-music" rel="title-tip" data-music-hash="75ec5a824cfbd89d9b2383914fbe11dd" data-music-flag="Y" title="Big Data">
-    <audio id="my-audio">
+    <audio id="my-audio" preload="auto" >
         您的浏览器不支持 audio 标签。
-        <source src="img/Big_Data.mp3" type="audio/mp4" />
+        <source src="img/Big_Data.mp3" type="audio/mp3" />
         <source src="img/Big_Data.ogg" type="audio/ogg" />
     </audio>
     <img src="img/music-wrap.jpg" alt="音乐播放器">
@@ -298,7 +300,8 @@
             <section class="page5">
                 <div class="grid-auto-wrapper">
                     <div class="m-video-wrap">
-                        <video id="myVideo" width="100%" height="40%" controls="controls" preload="auto" webkit-playsinline>
+                        <div class="video-cover"></div>
+                        <video id="myVideo" width="100%" height="100%" controls="controls" preload="auto" webkit-playsinline>
                             您的浏览器不支持 video 标签。
                             <source src="img/bigdata.mp4" type="video/mp4" />
                             <source src="img/bigdata.ogg" type="video/ogg" />
@@ -393,6 +396,7 @@
             }
         });
         var stopVideo = function() {
+            $(".video-cover").css("display", "block");
             $("#myVideo")[0].pause();
         };
         swiper.on('slideChangeStart', function (s) {
@@ -402,27 +406,29 @@
             }
         });
 
-        $('#smohan-v4-music').on('click', function(e) {
-            var audio = $('#my-audio')[0];
-            var playAudio = function() {
-                if (!audio.paused) {
-                    audio.pause();
-                }
-                audio.play();
-            };
-            (function(that) {
-                if (!$(that).hasClass('play-safari')) {
-                    audio.pause();
-                    return;
-                }
-                playAudio();
-            })(this);
+        $('#smohan-v4-music').bind('click', function(e) {
+//            alert("clicked");
+            var myAudios = $('#my-audio');
+            if (myAudios.hasClass('playing')) {
+                myAudios[0].pause();
+                myAudios.removeClass('playing');
+//                alert("stoped");
+                return;
+            }
+            var myAudio = myAudios[0];
+            myAudio.play();
+            $('#my-audio').addClass('playing');
         })
 
         $("#next-page-for-init").bind("click", function() {
             swiper.slideNext();
         })
-
+//        playAudio();
+        $(".video-cover").bind("click", function() {
+            $(".video-cover").css("display", "none");
+            var myVideo = $("#myVideo")[0];
+            myVideo.play();
+        })
     })();
 
 </script>
